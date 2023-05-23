@@ -9,7 +9,7 @@ function returnPromise(string) {
 }
 
 let arrFunc = (variable, func) => {
-	if (variable)
+	if (variable && func)
 		return func(variable);
 }
 
