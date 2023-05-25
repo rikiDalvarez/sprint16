@@ -3,6 +3,7 @@ const { returnPromise, arrFunc } = require("../app/promise")
 const { add, subtract, multiply, devide } = require("../app/simple")
 const getEmployee = require("../app/getEmployee")
 const getSalary = require("../app/getSalary")
+const mockData = require("../../sprint13/mockdata")
 
 //N1E1
 describe("test the functionality of the simple functions", () => {
@@ -88,9 +89,31 @@ describe("getEmployee function", () => {
 
 describe("getSalary function", () => {
 
-	test("if first param is not an array", () => {
+	test("first param is not an array", () => {
+		expect.assertions(1)
 		expect(() => { getSalary("", 1) }).toThrow(Error)
+	});
+
+	test("should return an object when passed 2 correct params", () => {
+
+		const result = {
+			id: expect.any(Number),
+			salary: expect.any(Number)
+		}
+
+		expect.assertions(1)
+		return expect(getSalary(mockData.salaries, mockData.employees[0])).resolves.toStrictEqual(result)
 	})
+
+	test("second param is not an object", async () => {
+		expect.assertions(1)
+		try {
+			await getSalary([], 1)
+		} catch (error) {
+			expect(error.message).toBe(undefined)
+		}
+	});
+
 })
 
 
