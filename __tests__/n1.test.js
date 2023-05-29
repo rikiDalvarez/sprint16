@@ -4,6 +4,7 @@ const { add, subtract, multiply, devide } = require("../app/simple")
 const getEmployee = require("../app/getEmployee")
 const getSalary = require("../app/getSalary")
 const mockData = require("../../sprint13/mockdata")
+const { myAsyncFunc, myPromiseFunc } = require("../app/asyncFunc")
 
 //N1E1
 describe("test the functionality of the simple functions", () => {
@@ -95,12 +96,10 @@ describe("getSalary function", () => {
 	});
 
 	test("should return an object when passed 2 correct params", () => {
-
 		const result = {
 			id: expect.any(Number),
 			salary: expect.any(Number)
 		}
-
 		expect.assertions(1)
 		return expect(getSalary(mockData.salaries, mockData.employees[0])).resolves.toStrictEqual(result)
 	})
@@ -113,7 +112,52 @@ describe("getSalary function", () => {
 			expect(error.message).toBe(undefined)
 		}
 	});
+});
 
+describe("myPromiseFunc", () => {
+
+	test("to be resolved", () => {
+		return expect(myPromiseFunc()).resolves.toBe('the promise is resolved after 2 sec');
+	});
+
+	test('should resolve after 2 sec', async () => {
+		jest.useFakeTimers();
+		const promise = myPromiseFunc();
+		jest.advanceTimersByTime(2000)
+
+		const result = await promise;
+		expect(result).toBe('the promise is resolved after 2 sec')
+
+		jest.useRealTimers()
+	})
+
+});
+
+describe("myAsyncFunc", () => {
+
+	test("should be resolved", async () => {
+		return expect(await myAsyncFunc(myPromiseFunc)).toBe(
+			'the promise is resolved after 2 sec')
+	})
+
+	test("should be resolved after 2 sec", async () => {
+		jest.useFakeTimers();
+
+		const promise = myAsyncFunc(myPromiseFunc);
+		jest.advanceTimersByTime(2000)
+
+		const result = await promise;
+		expect(result).toBe('the promise is resolved after 2 sec')
+
+		jest.useRealTimers()
+	})
+
+	test("should assert 1 func inside myAsyncFunc", () => {
+		const test = jest.fn();
+		expect.assertions(1);
+		myAsyncFunc(test)
+		expect(test).toHaveBeenCalled();
+	})
 })
 
 

@@ -8,7 +8,6 @@ const getSalary = (array, employee) => {
 			}
 		});
 		if (employerSalary) {
-			console.log(employerSalary)
 			resolve(employerSalary)
 		} else {
 			reject('not employee found')

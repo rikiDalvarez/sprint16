@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685009761229" clover="3.2.0">
-  <project timestamp="1685009761229" name="All files">
-    <metrics statements="33" coveredstatements="29" conditionals="22" coveredconditionals="18" methods="13" coveredmethods="11" elements="68" coveredelements="58" complexity="0" loc="33" ncloc="33" packages="1" files="4" classes="4"/>
+<coverage generated="1685355220426" clover="3.2.0">
+  <project timestamp="1685355220427" name="All files">
+    <metrics statements="40" coveredstatements="35" conditionals="22" coveredconditionals="18" methods="17" coveredmethods="15" elements="79" coveredelements="68" complexity="0" loc="40" ncloc="40" packages="1" files="5" classes="5"/>
+    <file name="asyncFunc.js" path="/Users/rikidutra/Desktop/nodeJs/sprint16/app/asyncFunc.js">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="12" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+    </file>
     <file name="getEmployee.js" path="/Users/rikidutra/Desktop/nodeJs/sprint16/app/getEmployee.js">
       <metrics statements="8" coveredstatements="4" conditionals="10" coveredconditionals="7" methods="3" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
@@ -14,7 +25,7 @@
       <line num="14" count="1" type="stmt"/>
     </file>
     <file name="getSalary.js" path="/Users/rikidutra/Desktop/nodeJs/sprint16/app/getSalary.js">
-      <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+      <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="3" type="cond" truecount="2" falsecount="0"/>
       <line num="3" count="2" type="stmt"/>
@@ -24,9 +35,8 @@
       <line num="7" count="1" type="stmt"/>
       <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="11" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
     </file>
     <file name="promise.js" path="/Users/rikidutra/Desktop/nodeJs/sprint16/app/promise.js">
       <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
